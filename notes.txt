@@ -1,0 +1,73 @@
+episode 2:-
+Installing npm into the project. 
+step 1:- in terminal execute npm init.
+2:- follow as the steps proceed and enter the details as required.
+3:- continuing step 2 provide package name, version, description etc.and hit enter
+4:- package.json file is created that has all the configurations of the npm.
+
+Now we can get packages/dependencies into our project.
+
+we will now install parcel in our app that will give muscles to our skeleton app.
+
+there are 2 types of dependencies
+1. Dev dependencies:- dependencies that is required only during dev phase
+2. normal dependencies:- dependencies that is required at production as well
+
+Now we want to install parcel as a dev dependencies so we run the code
+npm install -D parcel
+we'll get another file known as package-lock.json
+we'll see this kind of thing. 
+ "parcel": "^2.12.0"
+ there is a caret(^) at the beginning we can also put tilde(~)as well.
+ ^ ensures once a new version is available for the packagae it'll install it automatically. even minor version
+ ~ ensures to install the major version of the package
+ It's good to keep it as caret than tilde as major version can cause your app to breakup majorly.
+
+ package.lock.json  keeps a record of exact package which is installed.
+ package.json keeps approx version of the package
+
+ package.lock has something known as integrity that ensures whatever version of package is present in the system the same package gets 
+ deployed in the production
+
+ there is a node modules folder also gets installed.
+ node modules is a database of all the data
+
+ whatever u can regenerate don't put it on git.
+
+ Ignite the app using parcel:
+ npx parcel index.html
+
+ just like we have npm we have npx. when we do npm it means we are calling the command of npm.
+ npx means executing a package.
+
+ install react as a package in your app as using cdn links is a bad practise
+ install react dom as a packagae in your app using "npm i react-dom"
+
+ # parcel
+  - dev build
+  - local server
+  - HMR = Hot Module Replacement
+  - File watching algorithm written in c++
+  - Faster builds because of caching. 
+  - Image optimization
+  - Minification
+  - Bundling
+  - Compress
+  - consistent hashing
+  - code splitiing
+  - differntial bundling - support older browsers
+  - diagnostic
+  - error handelling
+  - host your app on https protocol
+  - Tree shaking: remove unused code for you 
+  - different dev and prod build
+
+In order to create a production ready code we execute a command "npx parcel build index.html"
+we get an error where we have to delete the main: app.js from
+
+Let's make our app compatible for older browsers
+"browserslist": [
+    "last 10 Chrome version"
+  ]
+using this code in package.json it makes ur app compatible for the mentioned browsers.
+getting the list using https://browserslist.dev/?q=bGFzdCAxMDAgdmVyc2lvbnM%3D this link
