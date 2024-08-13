@@ -71,3 +71,40 @@ Let's make our app compatible for older browsers
   ]
 using this code in package.json it makes ur app compatible for the mentioned browsers.
 getting the list using https://browserslist.dev/?q=bGFzdCAxMDAgdmVyc2lvbnM%3D this link
+
+--------------------------
+episode 3
+--------------------------
+create a script for starting our project in dev mode.
+in package.json incorporate "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  this will allow to start the project in dev mode 
+You can write a script for build mode as well.
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+This is industry standard to use scripts to execute a project to run any new image just go to package.json and check the start as well as the build scripts.
+Now to start the project in dev mode run the code "npm run start" or "npm start"
+
+To run the project in the build mode use "npm run build" the command "npm build" won't work in build mode.
+
+when u do React.createElement bts it creates an object and when we render this element onto the dom then it becomes a HTML element
+=> object => HTMLElement(render)
+when the HTMLElement is rendered it will replace the existing html element in the html file of the web page.
+so when react creates element which is an object which gets rendered as html and replaces everything in index.html
+
+jsx is not HTML inside Javascript. jsx is html like or xml like syntax
+
+when const jsxHeading = <h1>Hello World</h1>; this code is executed the object is created and then the 
+
+The jsx code is transpiled(code is converted to the code that browsers can understand) before passing to the JS engine.
+The transpiling is done by Parcel(the bundler used in the project). Parcel does not does it itself instead it is done by one of the parcel's dependecy BABEL.
+Babel is a transpiler. It converts the code written in one language to another language.
+
+React.createElement =>ReactElement which is a JS object => HTMLElement(render)
+
+JSX, being converted by BABLE=> React.createElement => ReactElement which is a JS object => HTMLElement(render)

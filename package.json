@@ -4,6 +4,8 @@
   "description": "This is namaste react learning course learned by ashutosh taught by akshay",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
