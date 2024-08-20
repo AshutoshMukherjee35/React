@@ -116,3 +116,19 @@ React.createElement =>ReactElement which is a JS object => HTMLElement(render)
 
 JSX, being converted by BABLE=> React.createElement => ReactElement which is a JS object => HTMLElement(render)
 
+If you want to give attributes in JSX you have to give it in camelCase. 
+
+Check new attributes in react- HW
+
+if ur jsx in single line then const jsxHeading = <h1 className="head" tabIndex="1">Hello World from jsx</h1>; this is a valid syntax
+but if u r writing it in multiple lines then it is mandatory to use () i.e const jsxHeading = (<h1 className="head" tabIndex="1">
+Hello World from jsx</h1>;) this is a correct syntax.
+
+there are 2 ways of component
+1. Class based component: uses js classes
+2. Functional component: uses functional based components
+
+React functional component
+-is just a js function.
+
+functional component returns a jsx.
