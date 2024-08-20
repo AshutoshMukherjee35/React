@@ -80,7 +80,7 @@ in package.json incorporate "scripts": {
     "start": "parcel index.html",
     "test": "jest"
   },
-  this will allow to start the project in dev mode 
+  this will allow to start the project in development mode 
 You can write a script for build mode as well.
   "scripts": {
     "start": "parcel index.html",
@@ -97,14 +97,22 @@ when u do React.createElement bts it creates an object and when we render this e
 when the HTMLElement is rendered it will replace the existing html element in the html file of the web page.
 so when react creates element which is an object which gets rendered as html and replaces everything in index.html
 
-jsx is not HTML inside Javascript. jsx is html like or xml like syntax
+jsx is a convention where we merge html and js together
+jsx is not HTML inside Javascript. jsx is html like or xml like syntax.
 
-when const jsxHeading = <h1>Hello World</h1>; this code is executed the object is created and then the 
+when u are writing code u write it first for humans and then for the machines.
 
-The jsx code is transpiled(code is converted to the code that browsers can understand) before passing to the JS engine.
+jsx is not a valid js.
+
+jsx is transpiled before it reaches to the JS engine. Transpiling is done by PARCEL(it's a beast the transpiling is done by BABEL a dependency of PARCEL)
+
+when const jsxHeading = <h1>Hello World</h1>; this code is executed the object is created and then the -
+
+- The jsx code is transpiled(code is converted to the code that browsers can understand) before passing to the JS engine.
 The transpiling is done by Parcel(the bundler used in the project). Parcel does not does it itself instead it is done by one of the parcel's dependecy BABEL.
 Babel is a transpiler. It converts the code written in one language to another language.
 
 React.createElement =>ReactElement which is a JS object => HTMLElement(render)
 
 JSX, being converted by BABLE=> React.createElement => ReactElement which is a JS object => HTMLElement(render)
+
