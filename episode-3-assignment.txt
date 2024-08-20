@@ -1,0 +1,21 @@
+- What is JSX?
+Javascript expression, ability to write HTML like syntax code in JS.
+
+- Superpowers of JSX
+ability to write HTML/xml like syntax. Sanitizes the code properly so that XSS cannot take place.
+
+● Role of type attribute in script tag? What options can I use there?
+The `type` attribute in the `<script>` tag specifies the scripting language used in the script. By default, it's `"text/javascript"`, which tells the browser to execute the script as JavaScript.
+
+Here are some options you can use for the `type` attribute:
+
+- `"text/javascript"`: The default, for JavaScript code.
+- `"module"`: Indicates that the script should be treated as an ES6 module, enabling import/export features.
+- `"application/json"`: Treats the content as JSON data.
+- `"application/ld+json"`: For embedding JSON-LD (Linked Data) in web pages.
+
+For most modern web development, using `"module"` is common for modular JavaScript.
+
+● {TitleComponent} vs {<TitleComponent/>} vs
+{<TitleComponent></TitleComponent>} in JSX
+
