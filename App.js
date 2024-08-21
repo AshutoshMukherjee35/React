@@ -27,6 +27,7 @@ const Header = () => {
     
         return (
             <section id="header">
+            
               <a href="#">
                 <img className="header-icon" src={icon} alt="Icon" />
               </a>
