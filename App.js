@@ -1,31 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import icon from "./images/icon.png"
+import usericon from "./images/usericon.jpeg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-//react element {TitleComponent}
 
-const TitleComponent = <h1>This is title component as react element</h1>;
+//Create a Nested header Element using React.createElement(h1,h2,h3 inside a div with class “title”)
+const NestedHeader = React.createElement("div",{className: "title"}, 
+    [React.createElement("h1",{id: "heading-1"}, "I am h1 tag"), 
+        React.createElement("h2", {id: "heading-2"}, "I am a h2 tag"),
+            React.createElement("h3", {id: "heading-3"}, "I am a h3 tag")]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-const RenderTitleComponent = () => {
-   return (
-    <div>
-        {TitleComponent}
-    </div>
-   )
+// Create a Header Component from scratch using Functional Components with
+// JSX
+// ○ Add a Logo on left
+// ○ Add a search bar in middle
+// ○ Add User icon on right
+// ○ Add CSS to make it look nice
+
+
+const Header = () => {
+    
+        return (
+            <section id="header">
+              <a href="#">
+                <img className="header-icon" src={icon} alt="Icon" />
+              </a>
+              <section className="input-container">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+                <input placeholder="Search" />
+              </section>
+              <a href="#">
+                <img className="user-icon" src={usericon} alt="User Icon" />
+              </a>
+            </section>
+          );
+    
 }
-const TitleComponent2 = () => {
-    return (
-        <h1>This is title component 2 as react functional component</h1>
-    )
-};
 
-
-// {<TitleComponent/>} {<TitleComponent></TitleComponent>} 
-const TitleComponentAsFunctionalComponent = () => (
-    <div>
-    <h1>This is title component as functional component</h1>
-    <TitleComponent2></TitleComponent2>
-    </div>
-)
-root.render(<TitleComponentAsFunctionalComponent />);
+root.render(<Header />);
