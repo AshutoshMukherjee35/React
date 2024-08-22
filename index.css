@@ -24,7 +24,7 @@
 }
 .resturant-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .resturant-card {
@@ -37,7 +37,7 @@
     cursor: pointer;
 }
 .body{
-    margin: 0 5%;
+    margin: 0 10%;
 }
 .Search{
     margin: 2rem;
@@ -64,3 +64,26 @@
     color: rgba(2, 6, 12, 0.92);
     margin-bottom: .75rem;
 }
+.top-rated-resturants-btn, .filter-price-high-to-low{
+    padding: 1rem;
+    border-radius: 2rem;
+    color:#3a3a3a;
+    cursor: pointer;
+    margin: 0 2% 0 2%;
+}
+.search-box{
+    height: 2rem;
+    width: 20%;
+    margin-left: 4rem;
+}
+/* .filter-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+.search-box{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 20%;
+} */
