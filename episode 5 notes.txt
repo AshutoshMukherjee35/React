@@ -1,0 +1,25 @@
+Let's get hooked:-
+React Hooks
+
+.js and .jsx extension can be used interchangebaly and it hardly matters.
+
+we can use this type of import statement import Header from './components/Header' else we can also use import Header from './components/Header.js'
+it's debateable on how do we import but we can keep it as it is and not complicate the things by putting the extension.
+
+when we have to export multiple values from a single file then we use Named Export(check constants.js file for that
+and if we want to export only single value from a single file at that time we use default export. check components files for the same for example.
+
+Named imports are imported like this import { RESTURANT_IMAGE_CDN_URL } from "../utils/constants"
+default import imported like this import ResturantCard from "./ResturantCard";
+
+
+State variable = Super powerful variable.
+
+REACT HOOK is a normal JS function which is given to us by REACT. THAT function comes with some superpowers.
+
+#REACT HOOKS
+- Normal JS utility functions.
+
+- 2 Very important Hooks. 
+1. useState() - Super powerful state variables in react
+2. useEffect()

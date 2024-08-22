@@ -49,13 +49,18 @@
     object-fit: cover;
 }
 .resturant-card__details{
-    margin: 0 0.75rem;
+    margin: 1rem 0.75rem;
 }
 .resturant-card__details > p, span {
     font-size: 1rem;
     color: rgba(2, 6, 12, 0.6);
+    
+}
+.resturant-card__details > span {
+    margin-top: 50%;
 }
 .res-name{  
     font-size: 2rem;
     color: rgba(2, 6, 12, 0.92);
+    margin-bottom: .75rem;
 }
