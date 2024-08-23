@@ -349,9 +349,9 @@ const Body = () => {
                     Top Rated Resturants
                 </button>
                 <button className="filter-price-high-to-low" onClick={filterCostOfTwo}>Filter price for 2: Low to High</button>          
-                <button className="filter-price-high-to-low" onClick={resetFilters}>Reset Filters</button>
+                <button className="filter-price-high-to-low reset-filter" onClick={resetFilters}>Reset Filters</button>
                 <input id="search-box" className="search-box" placeholder="Search" value={searchQuery} onChange={handleInput} />
-                <button onClick={showResult}>Search</button>
+                <button className="search-btn" onClick={showResult}>Search</button>
                 </div>
             <div className="body-container">              
                     <div className="resturant-container">
