@@ -11,6 +11,9 @@
 .logo{
     width: 10rem;
 }
+.nav-items{
+    margin-right: 4%;
+}
 .nav-items > ul {
     display: flex;
 }
@@ -21,6 +24,12 @@
 .nav-items > ul > li > a {
     text-decoration: none;
     color: black;
+}
+.nav-btn{
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+    height: 30px;
+    border-radius: 15px;
 }
 .resturant-container{
     display: flex;
@@ -91,6 +100,12 @@
     text-align: center;
     width: 20%;
 } */
+
+.shimmer-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 @media screen and (max-width: 768px) {
     .filter-container{

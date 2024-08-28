@@ -1,0 +1,12 @@
+A hook is nothing but a normal js function which has it's own usecases.
+
+useEffect hook
+syntax
+    useEffect(()=>{}, []);
+
+    The callback function is called after your component renders.
+
+    if u want to do something after rendering the component we use it usin useEffect
+
+     //as the data loads to show the loading screen we can render a Loading text like this
+    // but this is not a good practice. So we use something called as Shimmer UI to mitigate this.

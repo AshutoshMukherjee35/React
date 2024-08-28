@@ -1,6 +1,7 @@
 import ResturantCard from "./ResturantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import resList from "../utils/mockData";
+import Shimmer from './Shimmer'
 
 
 const Body = () => {
@@ -8,7 +9,7 @@ const Body = () => {
     //usestate maintains the state of ur component. Scope of usestate is within the component.
     //Local State variable - Super powerful variable. when u call this useSTate it will give u a state variable u receive the state variable using the destructuring as done below
     // to modify the variable used in useState we have to use a function in de-structure of elements.
-    const [listOfResturants, setlistOfResturants] = useState(resList);//destructuring on the fly
+    const [listOfResturants, setlistOfResturants] = useState([]);//destructuring on the fly
     /**
      * behind the scenes this is what is happening.
      *  const [listOfResturants, setlistOfResturants] = arr
@@ -337,7 +338,38 @@ const Body = () => {
     //    console.log(foundResturant)
     // }
 
-    return(
+    //useEffect:-
+    useEffect(()=>{
+        fetchData()
+    }, []);
+
+    const fetchData = async () => {
+        const data = await fetch(
+            'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+        
+        const jsonValue = await data.json();
+        // console.log(jsonValue);
+        // console.log(jsonValue.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+        
+
+        //optional chaining
+        setlistOfResturants(jsonValue?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    console.log('Body Rendered')// logs 1st and after that useEffect called is printed
+
+    //as the data loads to show the loading screen we can render a Loading text like this
+    // but this is not a good practice. So we use something called as Shimmer UI to mitigate this.
+    // if(listOfResturants.length === 0){
+    //     return <h1>Loading........</h1>
+    // }
+
+    //this is known as conditional rendering. Rendering on the basis of condition is conditional rendering
+    // if(listOfResturants.length === 0) {
+    //     return <Shimmer />
+    // }
+
+    return listOfResturants.length === 0 ? <Shimmer /> : (
         <section className="body">
                <div className="filter-container">
                 <button className="top-rated-resturants-btn" onClick={()=>{
