@@ -10,3 +10,8 @@ syntax
 
      //as the data loads to show the loading screen we can render a Loading text like this
     // but this is not a good practice. So we use something called as Shimmer UI to mitigate this.
+
+Whenever u change the local state variable REACT re-renders the component.
+
+
+Whenever state variables updates REACT triggers a reconcilliation cycle(re-renders the component)

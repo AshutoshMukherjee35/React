@@ -1,6 +1,5 @@
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
-import resList from "../utils/mockData";
 import Shimmer from './Shimmer'
 
 
@@ -10,6 +9,7 @@ const Body = () => {
     //Local State variable - Super powerful variable. when u call this useSTate it will give u a state variable u receive the state variable using the destructuring as done below
     // to modify the variable used in useState we have to use a function in de-structure of elements.
     const [listOfResturants, setlistOfResturants] = useState([]);//destructuring on the fly
+    const [filteredResturants , setFilteredResturants] = useState([]);
     /**
      * behind the scenes this is what is happening.
      *  const [listOfResturants, setlistOfResturants] = arr
@@ -305,6 +305,7 @@ const Body = () => {
     //         }
     //       }
     // ]
+
     const[searchQuery , setsearchQuery] = useState("");
     const handleInput = (event) => {
         setsearchQuery(event.target.value);
@@ -322,13 +323,11 @@ const Body = () => {
 
     const showResult = () => {
         let result = searchQuery.toLowerCase();
-        const filteredList = listOfResturants.filter((resturant) => resturant.info.name.toLowerCase() == result);
-        setlistOfResturants(filteredList)
+        const filteredList = listOfResturants.filter((resturant) => resturant.info.name.toLowerCase().includes(result));
+        setFilteredResturants(filteredList)
     }
 
-    const resetFilters = () => {
-        setlistOfResturants(resList);
-    } 
+ 
     
     // function showResult() {
     //    let resturantList = listOfResturants;
@@ -349,11 +348,12 @@ const Body = () => {
         
         const jsonValue = await data.json();
         // console.log(jsonValue);
-        // console.log(jsonValue.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+        console.log(jsonValue.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
         
 
         //optional chaining
         setlistOfResturants(jsonValue?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredResturants(jsonValue?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     console.log('Body Rendered')// logs 1st and after that useEffect called is printed
@@ -368,6 +368,13 @@ const Body = () => {
     // if(listOfResturants.length === 0) {
     //     return <Shimmer />
     // }
+
+    const resetFilters = async () => {
+        setlistOfResturants([]);
+        setFilteredResturants([]);
+        setsearchQuery("")
+        await fetchData();
+    } 
 
     return listOfResturants.length === 0 ? <Shimmer /> : (
         <section className="body">
@@ -388,7 +395,7 @@ const Body = () => {
             <div className="body-container">              
                     <div className="resturant-container">
                        {
-                        listOfResturants.map(resturant => <ResturantCard key={resturant.info.id} resData={resturant}/>)
+                        filteredResturants.map(resturant => <ResturantCard key={resturant.info.id} resData={resturant}/>)
                        }
                     </div>
             </div>

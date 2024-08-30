@@ -23,6 +23,7 @@ const Header = () => {
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Cart</a></li>
                 <button className="nav-btn" onClick={changeName}>{buttonName}</button>
+                {/* upon changing the state the header component is rerendered */}
             </ul>
         </nav>     
     </section>
