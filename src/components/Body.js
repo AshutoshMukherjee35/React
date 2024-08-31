@@ -1,6 +1,7 @@
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer'
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -317,7 +318,7 @@ const Body = () => {
             const costB = parseInt(b.info.costForTwo.match(/\d+/)[0]);
             return costA - costB;
           });
-          setlistOfResturants(sortedList);
+          setFilteredResturants(sortedList);
         // console.log(sortedList)
     }
 
@@ -382,8 +383,8 @@ const Body = () => {
                 <button className="top-rated-resturants-btn" onClick={()=>{
                 //    listOfResturants = listOfResturants.filter(resturant => resturant.info.avgRating > 4)
                 //     console.log(listOfResturants)
-                    const filteredList = listOfResturants.filter(resturant => resturant.info.avgRating > 4)
-                    setlistOfResturants(filteredList);
+                    const filteredList = listOfResturants.filter(resturant => resturant.info.avgRating > 4.4)
+                    setFilteredResturants(filteredList);
                 }}>
                     Top Rated Resturants
                 </button>
@@ -395,7 +396,9 @@ const Body = () => {
             <div className="body-container">              
                     <div className="resturant-container">
                        {
-                        filteredResturants.map(resturant => <ResturantCard key={resturant.info.id} resData={resturant}/>)
+                        filteredResturants.map(resturant => 
+                      <Link key={resturant.info.id} to={"/resturants/"+resturant.info.id}> <ResturantCard resData={resturant}/> </Link>
+                    )
                        }
                     </div>
             </div>
