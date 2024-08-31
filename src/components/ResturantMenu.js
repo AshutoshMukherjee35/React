@@ -35,18 +35,14 @@ const ResturantMenu = () => {
 
     return (
         <section className="resturant-menu">
-            <h2>{name}</h2>
-            <p>{cuisines.join(', ')} - {costForTwoMessage}</p>
-            <h2>Menu</h2>
-             <ul>
-                {/* <li>{itemCards[0].card.info.name}</li>
-                <li>{itemCards[1].card.info.name}</li>
-                <li>{itemCards[2].card.info.name}</li> */}
-                {/* As we can see we are iterating over the itemCards so we map for each of the items present in the itemcards. */}
+            <h2 className="resturant-menu__name">{name}</h2>
+            <p className="resturant-menu__cuisines">{cuisines.join(', ')} - {costForTwoMessage}</p>
+            <h2 className="resturant-menu__title">Menu</h2>
+             <ul className="resturant-menu__items">
                 {itemCards.map((item) => (
                     <li key={item.card.info.id}>
                         {item.card.info.name} - {'₹ '}
-                        {item.card.info.finalPrice / 100 || item.card.info.defaultPrice / 100 }
+                        {item.card.info.finalPrice / 100 || item.card.info.defaultPrice / 100 || item.card.info.price / 100 }
                     </li>
                     ))}
             </ul>

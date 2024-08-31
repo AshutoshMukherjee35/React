@@ -110,6 +110,22 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+.resturant-menu__name{
+    font-size: 4rem;
+}
+.resturant-menu__cuisines{
+    font-size: 1rem;
+    color: rgb(255, 82, 0);
+    margin: .75rem 0;
+}
+.resturant-menu__title{
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+.resturant-menu__items{
+    line-height: 3rem;
+    font-size: 1.35rem;
+}
 
 @media screen and (max-width: 768px) {
     .filter-container{
