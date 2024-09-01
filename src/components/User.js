@@ -6,6 +6,14 @@ const User = (props) => {
 
     useEffect(() => {
         //API calls
+     let timer =  setInterval(()=> {
+            console.log("Hello");
+        },1000);
+
+        //this is how u unmount using useEffect hook
+        return () => {
+            clearInterval(timer);
+        }
     },[])
 
     return (

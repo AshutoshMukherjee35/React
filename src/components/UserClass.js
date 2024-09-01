@@ -16,17 +16,12 @@ class UserClass extends React.Component{
         console.log('Constructor of user class called')
     }
 
-   async componentDidMount() {
-        // console.log(this.props.name+' Child mounted')
-        const data = await fetch('https://api.github.com/users/ashutoshmukherjee35');
-        // console.log(data);
-        const json = await data.json();
-        // console.log(json)
-
-        this.setState({
-            userInfo: json
-        })
-        console.log('Component did mount of userClass called')
+    componentDidMount() {
+        // You can see that the setinterval is getting executed everytime even when we are navigating away from the page.
+        //to mitigate this we have to write a cleanup code and we write it in the component will unmount method
+        this.timer = setInterval(()=>{
+            console.log('User class component did mount called every second')
+        }, 1000)
     }
 
     componentDidUpdate() {
@@ -34,7 +29,8 @@ class UserClass extends React.Component{
     }
 
     componentWillUnmount() {
-        console.log('Component WILL unmount of user class');
+        clearInterval(this.timer)
+        console.log('component unmounted')
     }
 
     render() {
