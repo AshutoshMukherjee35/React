@@ -1,0 +1,31 @@
+Why do we use Super(props)?
+
+loading a class based component means creating an instance of the class
+
+In class based components we do not update the state variables directly
+this.state.count = this.state.count+1 this is invalid way of changing the state.
+instead we use this.setState() function. That takes in an object
+that modifies your state.
+
+In Class Based Components, When a child component is used inside a Parent component. 
+In such cases the process takes place in a certain order as follows:-
+
+a. The Parent constructor gets called first.
+b. Then the Parent render method gets called second. Now there is a child component that is being instantiated inside the parent now the
+methods of child components gets called in the same order.
+c. The child constructor gets called first(with reference of child) i.e third with reference to the complete process.
+d. Then the child render method gets called fourth.
+
+Now, if we use a componentdidmount() method in the class based components then this method gets called at the last i.e after the render is done
+and the component is visible on the screen.
+
+So in this case the process order would be:
+
+a. The parent constructor is called 1st
+b. The parent render method is called 2nd
+c. The child constructor is called 3rd
+d. The child render method is called 4th
+e. The child component did mount gets called 5th
+f. The parent component did mount gets called 6th
+
+componentdidmount() is used to make API calls.

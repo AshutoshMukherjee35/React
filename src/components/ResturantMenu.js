@@ -39,7 +39,8 @@ const ResturantMenu = () => {
             <p className="resturant-menu__cuisines">{cuisines.join(', ')} - {costForTwoMessage}</p>
             <h2 className="resturant-menu__title">Menu</h2>
              <ul className="resturant-menu__items">
-                {itemCards.map((item) => (
+                
+                {itemCards?.map((item) => (
                     <li key={item.card.info.id}>
                         {item.card.info.name} - {'₹ '}
                         {item.card.info.finalPrice / 100 || item.card.info.defaultPrice / 100 || item.card.info.price / 100 }
