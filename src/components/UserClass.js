@@ -1,38 +1,51 @@
 import React from 'react'
+import UserClassChild from './UserClassChild';
 
 class UserClass extends React.Component{
     constructor(props) {
         super(props);
-        console.log(props)
+        // console.log(props)
 
         this.state = {
-            count: 0,
-            count3: 3,
+            userInfo: {
+                name: 'User',
+                location: 'Default',
+                bio: 'Default'
+            }
         }
-        console.log('Child constructor called')
+        console.log('Constructor of user class called')
     }
 
-    componentDidMount() {
-        console.log('Child mounted')
+   async componentDidMount() {
+        // console.log(this.props.name+' Child mounted')
+        const data = await fetch('https://api.github.com/users/ashutoshmukherjee35');
+        // console.log(data);
+        const json = await data.json();
+        // console.log(json)
+
+        this.setState({
+            userInfo: json
+        })
+        console.log('Component did mount of userClass called')
+    }
+
+    componentDidUpdate() {
+        console.log('Component DID update of user class');
+    }
+
+    componentWillUnmount() {
+        console.log('Component WILL unmount of user class');
     }
 
     render() {
-        console.log('Child render called')
-        const{name , location} = this.props;
-        const{count, count3} = this.state;
+        console.log('render of user class called')
+        const {name , location, bio} = this.state.userInfo
         return(
             <section className='card'>
                 <div>
-                <h3>Count: {count}</h3>
-                <button onClick={()=>{
-                    this.setState({
-                        count: this.state.count + 1,
-                        count3: this.state.count3 + 1
-                    })
-                }}>Increment</button>
                 <h2>Name: {name}</h2>
                 <h2>Location: {location}</h2>
-                <h3>Contact: @ashutoshmukherjee35</h3>
+                <h3>Bio: {bio}</h3>
                 </div>
             </section>
         )

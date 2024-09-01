@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const User = (props) => {
     const[count] = useState(0);
     const [count2] = useState(2);
+
+    useEffect(() => {
+        //API calls
+    },[])
+
     return (
         <section className="card">
             <div>
