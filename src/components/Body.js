@@ -389,9 +389,9 @@ const Body = () => {
     }
 
     return listOfResturants.length === 0 ? <Shimmer /> : (
-        <section className="body">
-               <div className="filter-container">
-                <button className="top-rated-resturants-btn" onClick={()=>{
+        <section className="mx-[10%]">
+               <div className="filter-container m-10 flex justify-evenly">
+                <button className="px-4 py-2 bg-gray-200 rounded-2xl" onClick={()=>{
                 //    listOfResturants = listOfResturants.filter(resturant => resturant.info.avgRating > 4)
                 //     console.log(listOfResturants)
                     const filteredList = listOfResturants.filter(resturant => resturant.info.avgRating > 4.4)
@@ -399,13 +399,15 @@ const Body = () => {
                 }}>
                     Top Rated Resturants
                 </button>
-                <button className="filter-price-high-to-low" onClick={filterCostOfTwo}>Filter price for 2: Low to High</button>          
-                <button className="filter-price-high-to-low reset-filter" onClick={resetFilters}>Reset Filters</button>
-                <input id="search-box" className="search-box" placeholder="Search" value={searchQuery} onChange={handleInput} />
-                <button className="search-btn" onClick={showResult}>Search</button>
+                <button className="px-4 py-2 bg-gray-200 rounded-2xl" onClick={filterCostOfTwo}>Filter price for 2: Low to High</button>          
+                <button className="px-4 py-2 bg-gray-200 rounded-2xl" onClick={resetFilters}>Reset Filters</button>
+                <div>
+                <input id="search-box" className="border border-solid border-black" placeholder="Search" value={searchQuery} onChange={handleInput} />
+                <button className="px-4 py-2 bg-gray-200 ml-1 rounded-2xl" onClick={showResult}>Search</button>
+                </div>
                 </div>
             <div className="body-container">              
-                    <div className="resturant-container">
+                    <div className="flex justify-evenly flex-wrap">
                        {
                         filteredResturants.map(resturant => 
                       <Link key={resturant.info.id} to={"/resturants/"+resturant.info.id}> <ResturantCard resData={resturant}/> </Link>

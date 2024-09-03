@@ -1,0 +1,18 @@
+styled components
+material UI
+chakra UI
+bootstrap
+ant design: 2nd most popular react ui library
+tailwind css
+
+
+Postcss is a tool to transform css into JS. Tailwind css uses it.
+
+npx means we are invoking/inititalizing tailwind css into our repository. 
+npx tailwindcss init this command creates tailwind.config.js file
+
+parcel will use .postcssrc to understand tailwind. that is why we use all configuration written in .postcssrc
+
+in tailwind.config.js content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+  ], this means tailwind can be found in any of the files mentioned in the content

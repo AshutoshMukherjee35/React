@@ -17,13 +17,13 @@ const User = (props) => {
     },[])
 
     return (
-        <section className="card">
-            <div>
-            <h3>Count: {count}</h3>
-            <h3>Count: {count2}</h3>
-            <h2>Name: {props.name}</h2>
-            <h2>Location: Raipur</h2>
-            <h3>Contact: @ashutoshmukherjee35</h3>
+        <section className="w-[40%] p-[2rem] mt-[1rem]">
+            <div className="leading-[3rem]">
+            <h3 className="leading-[3rem]">Count: {count}</h3>
+            <h3 className="leading-[3rem]">Count: {count2}</h3>
+            <h2 className="leading-[3rem]">Name: {props.name}</h2>
+            <h2 className="leading-[3rem]">Location: Raipur</h2>
+            <h3 className="leading-[3rem]">Contact: @ashutoshmukherjee35</h3>
             </div>
         </section>
     )

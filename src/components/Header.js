@@ -20,26 +20,26 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
     return(
-      <>
+      <div className="bg-red-300">
       <link rel="preload" href={LOGO_URL} />
-    <section className="header">       
+    <section className="flex justify-between">       
         <div className="logo-container">
-            <img className="logo" src={LOGO_URL} alt="logo" />
+            <img className="w-56" src={LOGO_URL} alt="logo" />
         </div>
-        <nav className="nav-items">
-            <ul>
-                <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About us</Link></li>
-                <li><Link to="/contact">Contact Us</Link></li>
-                <li><Link to="#">Cart</Link></li>
-                <li><Link to="/grocery">Grocery</Link></li>
-                <button className="nav-btn" onClick={changeName}>{buttonName}</button>
+        <nav className="flex items-center">
+            <ul className="flex">
+                <li className="m-8">Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
+                <li className="m-8"><Link to="/">Home</Link></li>
+                <li className="m-8"><Link to="/about">About us</Link></li>
+                <li className="m-8"><Link to="/contact">Contact Us</Link></li>
+                <li className="m-8"><Link to="#">Cart</Link></li>
+                <li className="m-8"><Link to="/grocery">Grocery</Link></li>
+                <button className="m-8 nav-btn" onClick={changeName}>{buttonName}</button>
                 {/* upon changing the state the header component is rerendered */}
             </ul>
         </nav>     
     </section>
-    </>
+    </div>
     );  
 }
 

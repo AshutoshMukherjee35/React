@@ -16,11 +16,11 @@ const ResturantMenu = () => {
 
 
     return (
-        <section className="resturant-menu">
-            <h2 className="resturant-menu__name">{name}</h2>
-            <p className="resturant-menu__cuisines">{cuisines.join(', ')} - {costForTwoMessage}</p>
-            <h2 className="resturant-menu__title">Menu</h2>
-             <ul className="resturant-menu__items">
+        <section className="resturant-menu mx-[10%]">
+            <h2 className="resturant-menu__name text-[4rem] font-bold">{name}</h2>
+            <p className="resturant-menu__cuisines text-[1rem] text-[rgb(255, 82, 0)] my-[0.75rem]">{cuisines.join(', ')} - {costForTwoMessage}</p>
+            <h2 className="resturant-menu__title mb-4">Menu</h2>
+             <ul className="resturant-menu__items text-[1.35rem] leading-[3rem]">
                 
                 {itemCards?.map((item) => (
                     <li key={item.card.info.id}>
