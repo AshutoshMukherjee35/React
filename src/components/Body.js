@@ -2,6 +2,7 @@ import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer'
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body = () => {
@@ -376,6 +377,16 @@ const Body = () => {
         setsearchQuery("")
         await fetchData();
     } 
+
+    const onlineStatus = useOnlineStatus();
+
+    if(!onlineStatus) {
+        return(
+            <div>
+                <h1> You seem to be offline please check your internet connection......... </h1>
+            </div>
+        )
+    }
 
     return listOfResturants.length === 0 ? <Shimmer /> : (
         <section className="body">

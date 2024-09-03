@@ -1,0 +1,39 @@
+Single responsibility principle:
+
+If u have a fn/class it should have a Single responsibility
+
+suppose if we have ResturantMenu is to have a sole responsibility to show the resturant ResturantMenu
+similarly Header.js has a single responsibility to render header in your page. This makes your code testable and maintainable
+Also we can reuse the component whenever required.
+
+maintainable
+reusable
+testable
+
+can be made by using Single responsibility principle. Keep your component as modular as possible.
+
+Hook is just a Utility function(normal function) with some special powers.
+
+the dist folder would have just 1 js file that is loaded. The problem is the size of the file would increase and 
+it will take a lot of time for initital rendering. To mitigate this we use something known as:
+
+- Chunking
+- Code splitting
+- Lazy loading
+- Dynamic bundleing
+- on demand loading
+all the above are synonymous.
+
+A bundle should have enough code for a feature. 
+
+Code splitting is done using lazy and Suspense in React.
+
+const component = lazy(()=>{import('./component')});
+
+<Suspense>
+    <component />
+</Suspense>
+
+Suspense takes a fallback parameter to display a fallback UI till the component is being loaded.
+
+By this you will see a different JS file being loaded for the lazy loaded component in the browsers n/w tab.
