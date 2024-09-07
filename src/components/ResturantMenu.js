@@ -12,7 +12,7 @@ const ResturantMenu = () => {
     
     const {name, cuisines, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card//to overcome such chaining pain GraphQL is used.
-    console.log(itemCards)
+    // console.log(itemCards)
 
 
     return (

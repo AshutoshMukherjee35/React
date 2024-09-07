@@ -13,9 +13,23 @@ const ResturantCard = (props) => {
             <span className="text-[1rem] text-[rgba(2,6,12,0.6)] mt-[50%]">{visibleCuisines.join(', ')}</span>
             {cuisines.length > 2 && <span>......</span> }
             <p className="text-[1rem] text-[rgba(2,6,12,0.6)]">{costForTwo}</p>
-            <p className="text-[1rem] text-[rgba(2,6,12,0.6)]">{avgRating} Stars</p>
+            <p className="text-[1rem] text-[rgba(2,6,12,0.6)]">{avgRating} ⭐️</p>
             </div>
         </section>
     )
 }
+
+export const withSpecialOffers = (ResturantCard) => {
+   
+    return (props) =>{
+        const {header , subHeader} = props.resData?.info?.aggregatedDiscountInfoV3
+        return(
+            <div className="relative">
+                <span className="bg-black text-white absolute top-1 left-[60%] z-10 p-2 rounded-xl">{header+" "+ subHeader}</span>
+                <ResturantCard {...props} />
+            </div>
+        )
+    }
+}
+
 export default ResturantCard; 
