@@ -1,3 +1,7 @@
 Higher order component is a function that takes a component and returns a component.
 
 HOC takes a component, enhances the component & returns the component
+
+
+UI layer = JSX
+data layer = states, all the things mentioned inside {}
