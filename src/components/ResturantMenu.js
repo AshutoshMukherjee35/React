@@ -9,6 +9,8 @@ const ResturantMenu = () => {
     const resInfo = useResturantInfo(resid)
     const[showIndex , setShowIndex] = useState(0);
 
+    const dummy = 'dummy data';
+
     if(resInfo===null){
         return <Shimmer />
     }
@@ -42,6 +44,7 @@ const ResturantMenu = () => {
                  headerData = {category?.card?.card}
                  showItems = {index === showIndex ? true : false}
                  setShowIndex = {()=> handleSetShowIndex(index)}
+                 dummy = {dummy}
                  />
                  ))}
         </section>

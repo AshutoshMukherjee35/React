@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 const Header = () => {
@@ -19,6 +20,12 @@ const Header = () => {
     },[buttonName]);
 
     const onlineStatus = useOnlineStatus();
+
+    //Context in function based component
+    const {loggedInUser} = useContext(UserContext);
+    // console.log(loggedInUser)
+
+
     return(
       <div className="bg-red-300">
       <link rel="preload" href={LOGO_URL} />
@@ -36,6 +43,7 @@ const Header = () => {
                 <li className="m-8"><Link to="/grocery">Grocery</Link></li>
                 <button className="m-8 nav-btn" onClick={changeName}>{buttonName}</button>
                 {/* upon changing the state the header component is rerendered */}
+                <li className="m-8 font-bold">{loggedInUser}</li>
             </ul>
         </nav>     
     </section>

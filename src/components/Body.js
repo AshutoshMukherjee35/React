@@ -1,5 +1,5 @@
 import ResturantCard, {withSpecialOffers} from "./ResturantCard";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Shimmer from './Shimmer'
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -8,6 +8,8 @@ import useListOfResturants from "../utils/useListOfResturants";
 import useFilterListOfResturants from "../utils/useFilterListOfResturants";
 import useFilterCostOfTwo from "../utils/useFilterCostOfTwo";
 import useSearchQuery from "../utils/useSearchQuery";
+import UserContext from "../utils/UserContext";
+
 
 
 const Body = () => {
@@ -57,6 +59,8 @@ const Body = () => {
 
     const ResturantCardOffer = withSpecialOffers(ResturantCard);
 
+    const {loggedInUser , setUserName} = useContext(UserContext);
+
     return listOfResturants.length === 0 ? <Shimmer /> : (
         <section className="mx-[10%]">
                <div className="filter-container m-10 flex justify-evenly">
@@ -71,6 +75,7 @@ const Body = () => {
                 <div>
                 <input id="search-box" className="border border-solid border-black" placeholder="Search" value={searchQuery} onChange={handleInput} />
                 <button className="px-4 py-2 bg-gray-200 ml-1 rounded-2xl" onClick={showResult}>Search</button>
+                <input className="ml-3 p-2 border border-black" placeholder="Enter User Name" value={loggedInUser} onChange={(event) => setUserName(event.target.value)} />
                 </div>
                 </div>
             <div className="body-container">              

@@ -1,6 +1,7 @@
 import React from 'react'
 import User from './User'
 import UserClass from './UserClass'
+import UserContext from '../utils/UserContext'
 
 
 class About extends React.Component{
@@ -24,8 +25,12 @@ class About extends React.Component{
   render() {
     console.log('Parent render called')
     return(
-      <div>
+      <div className='m-[10%]'>
         <h1>About</h1>
+        {/* This is how we use UserContext in a class based component */}
+        <UserContext.Consumer>
+          {(data) => <h1>{data.loggedInUser}</h1>}
+        </UserContext.Consumer>
         <h2>This is about component</h2>
         <User />
         {/* <UserClass /> */}
