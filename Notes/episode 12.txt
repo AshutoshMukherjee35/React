@@ -1,0 +1,24 @@
+Redux works in the data layer of the react app
+
+Project consists of UI layer as well as data layer
+
+Redux is not mandatory
+
+In large scale app where there is too much read and write operations taking place at such times we use Redux
+All apps that is made using redux can be made without using Redux
+
+Redux is different from React. Redux is a seperate library.
+Redux is not the only library for state management we can also use zustand.
+
+Using redux, our application becomes easy to debug
+
+Redux store is a big object kept in a central place There is no problem in keeping a very big object with all the data
+
+We have parts of redux store with slices
+
+Sepearte slice for cart data
+seperate slice for themes
+seperate slice for user data
+
+
+clicking on the add button it dispatches an action which inturn calls a function then the function modifies the cart

@@ -1,0 +1,134 @@
+episode 2:-
+Installing npm into the project. 
+step 1:- in terminal execute npm init.
+2:- follow as the steps proceed and enter the details as required.
+3:- continuing step 2 provide package name, version, description etc.and hit enter
+4:- package.json file is created that has all the configurations of the npm.
+
+Now we can get packages/dependencies into our project.
+
+we will now install parcel in our app that will give muscles to our skeleton app.
+
+there are 2 types of dependencies
+1. Dev dependencies:- dependencies that is required only during dev phase
+2. normal dependencies:- dependencies that is required at production as well
+
+Now we want to install parcel as a dev dependencies so we run the code
+npm install -D parcel
+we'll get another file known as package-lock.json
+we'll see this kind of thing. 
+ "parcel": "^2.12.0"
+ there is a caret(^) at the beginning we can also put tilde(~)as well.
+ ^ ensures once a new version is available for the packagae it'll install it automatically. even minor version
+ ~ ensures to install the major version of the package
+ It's good to keep it as caret than tilde as major version can cause your app to breakup majorly.
+
+ package.lock.json  keeps a record of exact package which is installed.
+ package.json keeps approx version of the package
+
+ package.lock has something known as integrity that ensures whatever version of package is present in the system the same package gets 
+ deployed in the production
+
+ there is a node modules folder also gets installed.
+ node modules is a database of all the data
+
+ whatever u can regenerate don't put it on git.
+
+ Ignite the app using parcel:
+ npx parcel index.html
+
+ just like we have npm we have npx. when we do npm it means we are calling the command of npm.
+ npx means executing a package.
+
+ install react as a package in your app as using cdn links is a bad practise
+ install react dom as a packagae in your app using "npm i react-dom"
+
+ # parcel
+  - dev build
+  - local server
+  - HMR = Hot Module Replacement
+  - File watching algorithm written in c++
+  - Faster builds because of caching. 
+  - Image optimization
+  - Minification
+  - Bundling
+  - Compress
+  - consistent hashing
+  - code splitiing
+  - differntial bundling - support older browsers
+  - diagnostic
+  - error handelling
+  - host your app on https protocol
+  - Tree shaking: remove unused code for you 
+  - different dev and prod build
+
+In order to create a production ready code we execute a command "npx parcel build index.html"
+we get an error where we have to delete the main: app.js from
+
+Let's make our app compatible for older browsers
+"browserslist": [
+    "last 10 Chrome version"
+  ]
+using this code in package.json it makes ur app compatible for the mentioned browsers.
+getting the list using https://browserslist.dev/?q=bGFzdCAxMDAgdmVyc2lvbnM%3D this link
+
+--------------------------
+episode 3
+--------------------------
+create a script for starting our project in dev mode.
+in package.json incorporate "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  this will allow to start the project in development mode 
+You can write a script for build mode as well.
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+This is industry standard to use scripts to execute a project to run any new image just go to package.json and check the start as well as the build scripts.
+Now to start the project in dev mode run the code "npm run start" or "npm start"
+
+To run the project in the build mode use "npm run build" the command "npm build" won't work in build mode.
+
+when u do React.createElement bts it creates an object and when we render this element onto the dom then it becomes a HTML element
+=> object => HTMLElement(render)
+when the HTMLElement is rendered it will replace the existing html element in the html file of the web page.
+so when react creates element which is an object which gets rendered as html and replaces everything in index.html
+
+jsx is a convention where we merge html and js together
+jsx is not HTML inside Javascript. jsx is html like or xml like syntax.
+
+when u are writing code u write it first for humans and then for the machines.
+
+jsx is not a valid js.
+
+jsx is transpiled before it reaches to the JS engine. Transpiling is done by PARCEL(it's a beast the transpiling is done by BABEL a dependency of PARCEL)
+
+when const jsxHeading = <h1>Hello World</h1>; this code is executed the object is created and then the -
+
+- The jsx code is transpiled(code is converted to the code that browsers can understand) before passing to the JS engine.
+The transpiling is done by Parcel(the bundler used in the project). Parcel does not does it itself instead it is done by one of the parcel's dependecy BABEL.
+Babel is a transpiler. It converts the code written in one language to another language.
+
+React.createElement =>ReactElement which is a JS object => HTMLElement(render)
+
+JSX, being converted by BABLE=> React.createElement => ReactElement which is a JS object => HTMLElement(render)
+
+If you want to give attributes in JSX you have to give it in camelCase. 
+
+Check new attributes in react- HW
+
+if ur jsx in single line then const jsxHeading = <h1 className="head" tabIndex="1">Hello World from jsx</h1>; this is a valid syntax
+but if u r writing it in multiple lines then it is mandatory to use () i.e const jsxHeading = (<h1 className="head" tabIndex="1">
+Hello World from jsx</h1>;) this is a correct syntax.
+
+there are 2 ways of component
+1. Class based component: uses js classes
+2. Functional component: uses functional based components
+
+React functional component
+-is just a js function.
+
+functional component returns a jsx.

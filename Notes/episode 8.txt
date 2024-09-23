@@ -1,4 +1,17 @@
 Why do we use Super(props), constructor(props)?
+Access to Parent Class's Constructor - When a child class extends a parent class, the
+child class can have its constructor. However, if the child class has a constructor,
+it must call super(props) as the first statement in its constructor. This is because
+super(props) is used to invoke the constructor of the parent class, ensuring that
+the parent class'\s initialization is performed before the child class\'s constructor
+code is executed. It is essential to maintain the inheritance chain correctly.
+
+Passing Props to the Parent Constructor - By passing props to super(props), we ensure
+that the props object is correctly passed to the parent class's constructor. This is
+important because the parent class may need to set up its properties or handle the
+props somehow. By calling super(props), we make the props available for the
+parent class's constructor to work with.
+
 
 loading a class based component means creating an instance of the class
 
@@ -213,3 +226,25 @@ const User = (props) => {
     )
 }
 export default User;
+
+Q ) (Research) Why can't we have the callback
+function of useEffect async ?
+A: In React, the  useEffect  hook is designed to handle side effects in functional
+components. It's a powerful and flexible tool for managing asynchronous
+operations, such as data fetching, API calls, and more. However, useEffect itself
+cannot directly accept an async callback function. This is because useEffect
+expects its callback function to return either nothing (i.e., undefined) or a cleanup
+function, and it doesn't work well with Promises returned from async functions.
+
+There are a few reasons for this:
+
+Return Value Expectation - The primary purpose of the useEffect callback function is
+to handle side effects and perform cleanup. React expects us to either return
+nothing (i.e., undefined) from the callback or return a cleanup function. An async
+function returns a Promise, and it doesn't fit well with this expected behavior.
+Execution Order and Timing - With async functions, we might not have fine-grained
+control over the execution order of the asynchronous code and the cleanup code.
+React relies on the returned cleanup function to handle cleanup when the
+component is unmounted or when the dependencies specified in the useEffect
+dependency array change. If you return a Promise, React doesn't know when or
+how to handle cleanup

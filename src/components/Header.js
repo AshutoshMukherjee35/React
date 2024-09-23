@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
@@ -25,6 +26,10 @@ const Header = () => {
     const {loggedInUser} = useContext(UserContext);
     // console.log(loggedInUser)
 
+    //Subscribing to the store using a Selector 
+
+    const cartItems = useSelector((store) => store.cart.items)
+    console.log(cartItems)
 
     return(
       <div className="bg-red-300">
@@ -39,7 +44,7 @@ const Header = () => {
                 <li className="m-8"><Link to="/">Home</Link></li>
                 <li className="m-8"><Link to="/about">About us</Link></li>
                 <li className="m-8"><Link to="/contact">Contact Us</Link></li>
-                <li className="m-8"><Link to="#">Cart</Link></li>
+                <li className="m-8 font-bold"><Link to="/cart">Cart - ({cartItems.length} Items)</Link></li>
                 <li className="m-8"><Link to="/grocery">Grocery</Link></li>
                 <button className="m-8 nav-btn" onClick={changeName}>{buttonName}</button>
                 {/* upon changing the state the header component is rerendered */}
