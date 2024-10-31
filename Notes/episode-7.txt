@@ -1,0 +1,38 @@
+if no dependency array that means useEffect is called on every render
+
+if dependency array is empty then useEffect is called on on initial render and just once.
+
+if dependency array is [btnName] then the useeffect is called everytime the btnName changes.
+
+never create your useState hook outside the functional component as it will throw an error. Try to call the hooks on the TOP.
+
+Never use your useState hook inside an if-else statement, for loops, functions.
+
+state variable are meant to be created at the top of the functional component only. This is a best practise to follow.
+
+For routing we use react router dom library
+
+whenever we have to create routes we have to code a routing information
+
+createBrowserRouter , RouterProvider
+
+LINK is used to make redirections in the application, provided by react-router-dom. It is used in place of anchor(<a></a>) tags to make the redirections.
+the syntax is <Link to="path"></Link>. Using this the app does not reloads everytime when a redirection takes place.
+
+As the reload does not take place again and again that's why react applications are called as Single page applications.
+
+# There are 2 types of routing :
+
+1. Server Side routing: When there is any network call taking place while loading a page onto the client such a routing is known as server side routing.
+for example, if we are using anchor tags to make n/w calls to server to load a specific page then server side routing takes place.
+
+2. Client Side routing: When there's no n/w call taking place for loading the page. This is as the Components are loaded initially
+and as per the routing information the components keeps changing. This makes the App faster. React uses client side routing as all the components are loaded in the beginning and 
+as per the changes in the routing information the components gets replaced. Making the app faster and also making react app's Single Page Application.
+
+# in react router dom gives us the super power to use parameters using useParams
+
+ {/* <li>{itemCards[0].card.info.name}</li>
+                <li>{itemCards[1].card.info.name}</li>
+                <li>{itemCards[2].card.info.name}</li> */}
+                {/* As we can see we are iterating over the itemCards so we map for each of the items present in the itemcards. */}

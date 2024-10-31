@@ -1,0 +1,21 @@
+Higher order component is a function that takes a component and returns a component.
+
+HOC takes a component, enhances the component & returns the component
+
+
+UI layer = JSX
+data layer = states, all the things mentioned inside {}
+
+REACT has 1 way data flow. Data flows in 1 direction i.e top to bottom.
+
+Process of passing the data as props from top level component to the lowest level of component is known as props drilling
+
+Supposse we have some data in resturant menu and we need to pass that to itemlist component  so the data is passed 
+through a level of components. this concept is known as props drilling.
+
+This is difficult when component composition increases heavily. We should avoid props drilling as it gets difficult to
+manage props in large applications.
+
+Instead we should use React context in place of props drilling
+
+We use context which is like a global place where ur data is kept and anybody can access it

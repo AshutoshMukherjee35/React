@@ -1,0 +1,9 @@
+Types of testing
+
+As a developer we will be concerned about this 2 types of testing only i.e 1 & 2
+1. Unit testing: testing a specific part of the application
+
+2. Integration testing: In large example their are several components communicate b/w each other. To test this features we write integration testing.
+
+end-to-end testing(e2e testing): Testing an app as soon as user lands in the app till the time user leaves the website. We'll test all the flows over here.
+[requires diff types of tools]

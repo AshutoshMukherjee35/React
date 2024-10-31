@@ -1,0 +1,36 @@
+food ordering app buildup:-
+
+1st thing that wwe should do is planning.
+
+in the web page we'll have a header. with 
+
+Components:-
+
+1. header
+    -logo
+    -nav items
+2. body
+   - Search
+   - Resturant Container
+     - Resturant cards
+        - img , name of res , star rating , cuisines , delivery time
+3. footer
+    -copyright
+    -links
+    -address
+    -contact info
+
+passing a prop to a component is similar to passing argument to a function.
+
+to pass dynamic data we use props to pass the data.
+
+CONFIG DRIVEN UI:-
+
+UI is basically is driven by a config. Latest practice this is what every company follows now. Asked in UI system design interview
+
+swiggy api: https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+
+resList.map(resturant => <ResturantCard key={resturant.info.id} resData={resturant}/>) 
+writing key is important because if we won't it will throw an error as react uniquely does not identify new elements added
+
+we don't use index as key's in react as it is a bad practice. This is mentioned in the official documentation of React.
